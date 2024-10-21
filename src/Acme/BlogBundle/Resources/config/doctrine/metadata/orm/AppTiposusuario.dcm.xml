@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppTiposusuario" table="app_tiposusuario">
+    <indexes>
+      <index name="stdu_id" columns="stdu_id"/>
+      <index name="stdu_id_2" columns="stdu_id"/>
+    </indexes>
+    <id name="stduId" type="boolean" column="stdu_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="stduCreacion" type="datetime" column="stdu_creacion" nullable="true"/>
+    <field name="stduUltimaModificacion" type="datetime" column="stdu_ultima_modificacion" nullable="true"/>
+    <field name="stduDescripcion" type="string" column="stdu_descripcion" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

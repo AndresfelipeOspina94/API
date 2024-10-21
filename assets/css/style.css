@@ -1,0 +1,52 @@
+body {
+  background-color: #d9d9d9;
+  margin: 40px;
+  font: 13px/20px normal Helvetica, Arial, sans-serif;
+  color: #4F5155;
+  height: 100%;
+  width: 100%;
+}
+#container {
+  margin: 10px;
+  border: 1px solid #D0D0D0;
+  box-shadow: 0 0 8px #D0D0D0;
+}
+#panel {
+  color: #666666;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+  padding: 15px 22px;
+  height: 400px;
+ }
+
+.panel-header{
+     border-bottom: 1px solid rgba(0,0,0,.12);
+     height: 44px;
+     font-size: 16px;
+     padding: 14px 22px;
+
+ }
+ .horizontal-scroll {
+     overflow-x: auto;
+     overflow-y: visible;
+ }
+
+ .table > thead > tr > th {
+     text-align: center;
+     font-weight: bold;
+     color: #000;
+ }
+ .panel > .panel-body {
+     padding: 15px 22px;
+     height: 100%;
+ }
+ .table > tbody > tr > td {
+     text-align: center;
+     vertical-align: inherit;
+      color: #000;
+ }
+
+/* CSS view_pdf */

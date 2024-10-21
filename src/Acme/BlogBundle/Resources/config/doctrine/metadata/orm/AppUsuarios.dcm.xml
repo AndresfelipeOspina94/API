@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppUsuarios" table="app_usuarios">
+    <indexes>
+      <index name="sc_id" columns="su_id"/>
+      <index name="Tipo de Usuario" columns="su_tipo_usuario"/>
+      <index name="su_tipo_usuario" columns="su_tipo_usuario"/>
+      <index name="su_estado" columns="su_estado"/>
+      <index name="su_tipo_dieta" columns="su_tipo_dieta"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="Movil" columns="su_movil"/>
+    </unique-constraints>
+    <id name="suId" type="integer" column="su_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="suNombres" type="string" column="su_nombres" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suApellidos" type="string" column="su_apellidos" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suCreacion" type="datetime" column="su_creacion" nullable="true"/>
+    <field name="suUltimaModificacion" type="datetime" column="su_ultima_modificacion" nullable="true"/>
+    <field name="suMovil" type="string" column="su_movil" length="15" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suToken" type="string" column="su_token" length="40" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suApiKeyPush" type="text" column="su_api_key_push" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suCorreo" type="string" column="su_correo" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suCiudad" type="string" column="su_ciudad" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suTipoDieta" type="smallint" column="su_tipo_dieta" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <field name="suFoto" type="string" column="su_foto" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="suCalificacion" type="float" column="su_calificacion" precision="2" scale="1" nullable="true">
+      <options>
+        <option name="default">0.0</option>
+      </options>
+    </field>
+    <many-to-one field="suTipoUsuario" target-entity="AppTiposusuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="su_tipo_usuario" referenced-column-name="stdu_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="suEstado" target-entity="AppEstadosusuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="su_estado" referenced-column-name="sedu_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
